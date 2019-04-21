@@ -1,0 +1,23 @@
+/* styling Todo List*/
+
+.title_logo{
+    margin-top : 30px;
+}
+
+.alert p{
+    margin: 0;
+}
+
+.alert{
+    width: fit-content;
+    margin-right: 10px;
+}
+
+.alert-group{
+    display: flex;
+    flex-flow: wrap;
+}
+
+.title_logo h1{
+    font-family: 'Sriracha', cursive;
+}
