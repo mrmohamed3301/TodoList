@@ -11,4 +11,13 @@ $(document).ready(function () {
     $('#deadline').attr('min',min_date); //set the max date on the datepicker tag
     var todo_list = [];  // list will be stored in this variable
 
+    function parseDate(str) {
+        var mdy = str.split('-');
+        return new Date(mdy[0], mdy[1]-1, mdy[2]);
+    }
+    //get left dates from the first date to second date
+    function datediff(first, second) {
+        return Math.round((second-first)/(1000*60*60*24));
+    }    
+
 })
