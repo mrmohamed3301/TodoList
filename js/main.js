@@ -1,3 +1,5 @@
+/*functionality of the Todo list in javascript*/
+
 $(document).ready(function () {
 
     var today = new Date();
@@ -38,9 +40,12 @@ $(document).ready(function () {
         $('.alert-group').html('');
         var txt = '';
         for (let i = 0; i < todo_list.length; i++) {
-            if(todo_list[i]['deadline']<=3) txt += '<div class="alert alert-danger alert-dismissible">';  //if the dealline< 3 then show red alert
-            if(todo_list[i]['deadline']>3 && todo_list[i]['deadline']<=10) txt += '<div class="alert alert-warning alert-dismissible">'; //if the dealline>3 and <10 then show yellow alert
-            if(todo_list[i]['deadline']>10) txt += '<div class="alert alert-secondary alert-dismissible">'; // else then show grey alert
+            //if the dealline< 3 then show red alert
+            if(todo_list[i]['deadline']<=3) txt += '<div class="alert alert-danger alert-dismissible">';
+            //if the dealline>3 and <10 then show yellow alert  
+            if(todo_list[i]['deadline']>3 && todo_list[i]['deadline']<=10) txt += '<div class="alert alert-warning alert-dismissible">';
+            // else then show grey alert 
+            if(todo_list[i]['deadline']>10) txt += '<div class="alert alert-secondary alert-dismissible">'; 
             
             txt += '<button type="button" class="close">×</button>';
             txt += '<p><strong>' + todo_list[i]['title'] + '</strong></p>';
@@ -55,7 +60,9 @@ $(document).ready(function () {
     $('#list_form').on('submit', function (e) {
         e.preventDefault();
         var deadline_date = $('#deadline').val();
-        var deadline = datediff(parseDate(today), parseDate(deadline_date));  //get the remaing date to deadline from today
+        //get the remaing date to deadline from today
+        var deadline = datediff(parseDate(today), parseDate(deadline_date));  
+        
         var item = {
             title: $('#title').val(),
             deadline: deadline
